@@ -1,32 +1,43 @@
 <?php
 namespace BlackBoxCode\Pando\Bundle\AccountBundle\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 trait PersonTrait
 {
     /**
-     * @var AccountInterface
-     *
-     * @ORM\OneToOne(targetEntity="Account", mappedBy="person")
+     * @ORM\ManyToMany(targetEntity="Account", mappedBy="persons")
      */
-    private $account;
-    
+    private $accounts;
+
     /**
      * {@inheritdoc}
      */
-    public function getAccount()
+    public function getAccounts()
     {
-        return $this->account;
+        if (is_null($this->accounts)) $this->accounts = new ArrayCollection();
+
+        return $this->accounts;
     }
-    
+
     /**
      * {@inheritdoc}
      */
-    public function setAccount(AccountInterface $account)
+    public function addAccount(AccountInterface $account)
     {
-        $this->account = $account;
-        
+        if (is_null($this->accounts)) $this->accounts = new ArrayCollection();
+        $this->accounts->add($account);
+
         return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeAccount(AccountInterface $account)
+    {
+        if (is_null($this->accounts)) $this->accounts = new ArrayCollection();
+        $this->accounts->removeElement($account);
     }
 }
