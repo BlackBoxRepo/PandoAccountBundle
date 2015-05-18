@@ -8,7 +8,7 @@ trait PersonTrait
     /**
      * @var AccountInterface
      *
-     * @ORM\OneToOne(targetEntity="Account", mappedBy="person")
+     * @ORM\OneToOne(targetEntity="Account", mappedBy="persons")
      */
     private $account;
     
