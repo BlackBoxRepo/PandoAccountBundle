@@ -20,6 +20,6 @@
         "blackboxcode/pando-note-bundle": "dev-master"
     },
     "autoload": {
-        "psr-4": {"BlackBoxCode\\Pando\\Bundle\\AccountBundle\\": ""}
+        "psr-4": {"BlackBoxCode\\Pando\\AccountBundle\\": ""}
     }
 }

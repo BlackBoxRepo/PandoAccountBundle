@@ -1,7 +1,7 @@
 <?php
-namespace BlackBoxCode\Pando\Bundle\AccountBundle\Model;
+namespace BlackBoxCode\Pando\AccountBundle\Model;
 
-interface NoteTypeInterface extends \BlackBoxCode\Pando\Bundle\NoteBundle\Model\NoteTypeInterface
+interface NoteTypeInterface extends \BlackBoxCode\Pando\NoteBundle\Model\NoteTypeInterface
 {
     const ACCOUNT = 'Account';
 }
